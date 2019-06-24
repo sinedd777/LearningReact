@@ -15,7 +15,7 @@ export const setCurrentPoll = poll => ({
 export const getPolls = () => {
     return async dispatch => {
         try {
-            const polls = await API.call('get', `polls`);
+            const polls = await API.call('get', `poll`);
             dispatch(setPolls(polls));
             dispatch(removeError());
         } catch (err) {
@@ -28,7 +28,7 @@ export const getPolls = () => {
 export const getUserPolls = () => {
     return async dispatch => {
         try {
-            const polls = await API.call('get', 'polls/user');
+            const polls = await API.call('get', 'poll/user');
             dispatch(setPolls(polls));
             dispatch(removeError());
         } catch (err) {
@@ -41,7 +41,7 @@ export const getUserPolls = () => {
 export const createPoll = data => {
     return async dispatch => {
         try {
-            const poll = await API.call('post', 'polls', data);
+            const poll = await API.call('post', 'poll', data);
             dispatch(setCurrentPoll(poll));
             dispatch(removeError());
         } catch (err) {
@@ -54,7 +54,7 @@ export const createPoll = data => {
 export const getCurrentPoll = path => {
     return async dispatch => {
         try {
-            const poll = await API.call('get', `polls/${path}`);
+            const poll = await API.call('get', `poll/${path}`);
             dispatch(setCurrentPoll(poll));
             dispatch(removeError());
         } catch (err) {
@@ -67,10 +67,12 @@ export const getCurrentPoll = path => {
 export const vote = (path, data) => {
     return async dispatch => {
         try {
-            const poll = await API.call('post', `polls/${path}`, data);
+            const poll = await API.call('post', `poll/${path}`, data);
             dispatch(setCurrentPoll(poll));
         } catch (err) {
-            const { error } = err.response.data;
+
+            console.log(err.response.data.err);
+            const error = err.response.data.err;
             dispatch(addError(error));
         }
     };

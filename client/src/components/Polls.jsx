@@ -1,22 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { getPolls, getUserPolls } from '../store/actions';
+import { getPolls, getUserPolls ,getCurrentPoll} from '../store/actions';
 
 class Polls extends Component {
     constructor(props) {
         super(props);
         this.handleSelect = this.handleSelect.bind(this);
     }
+
     componentDidMount() {
         const { getPolls } = this.props;
         getPolls();
     }
 
+
     handleSelect(id) {
-        const { history } = this.props;
+        const {history} = this.props;
         history.push(`/poll/${id}`);
+
+        // const { getCurrentPoll } = this.props;
+        // getCurrentPoll(id);
     }
+
 
     render() {
         const { getPolls, getUserPolls, auth } = this.props;
@@ -26,6 +32,8 @@ class Polls extends Component {
                 {poll.question}
             </li>
         ));
+
+
 
         return (
             <Fragment>
@@ -45,10 +53,12 @@ class Polls extends Component {
     }
 }
 
+
+
 export default connect(
     store => ({
         auth: store.auth,
         polls: store.polls,
     }),
-    { getPolls, getUserPolls },
+    { getPolls, getUserPolls ,getCurrentPoll},
 )(Polls);

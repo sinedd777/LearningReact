@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Pie } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 import { vote } from '../store/actions';
 import { color } from '../services/color';
@@ -17,7 +17,7 @@ const Poll = ({ poll, vote }) => {
             </button>
         ));
 
-    const data = {
+    const data = poll.options&&{
         labels: poll.options.map(option => option.option),
         datasets: [
             {
@@ -31,9 +31,9 @@ const Poll = ({ poll, vote }) => {
 
     return (
         <div>
-            <h3 className="poll-title">{poll.question}</h3>
+            <h3 classaName="poll-title">{poll.question}</h3>
             <div className="buttons_center">{answers}</div>
-            {/*<Pie data={data} />*/}
+            {poll.options&&<Pie data={data} />}
         </div>
     );
 };
