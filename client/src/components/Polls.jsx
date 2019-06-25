@@ -1,7 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-
+import '../index.css'
 import { getPolls, getUserPolls ,getCurrentPoll} from '../store/actions';
+import ListGroup from "react-bootstrap/ListGroup";
+import {Button} from "react-bootstrap";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 class Polls extends Component {
     constructor(props) {
@@ -28,9 +31,10 @@ class Polls extends Component {
         const { getPolls, getUserPolls, auth } = this.props;
 
         const polls = this.props.polls.map(poll => (
-            <li onClick={() => this.handleSelect(poll._id)} key={poll._id}>
-                {poll.question}
-            </li>
+            <ListGroup as="ul">
+                <ListGroup.Item as="li" onClick={() => this.handleSelect(poll._id)} key={poll._id}>
+                    {poll.question}</ListGroup.Item>
+            </ListGroup>
         ));
 
 
@@ -38,13 +42,12 @@ class Polls extends Component {
         return (
             <Fragment>
                 {auth.isAuthenticated && (
-                    <div className="buttons_center">
-                        <button className="button" onClick={getPolls}>
-                            All polls
-                        </button>
-                        <button className="button" onClick={getUserPolls}>
-                            My polls
-                        </button>
+                    <div className="buttons">
+                        <ButtonGroup aria-label="Basic example" class="polls">
+                            <Button variant="secondary" onClick={getPolls}>All Polls</Button>
+                            <Button variant="secondary" onClick={getUserPolls}>My Polls</Button>
+                        </ButtonGroup>
+
                     </div>
                 )}
                 <ul className="polls">{polls}</ul>

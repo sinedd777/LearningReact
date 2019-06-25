@@ -9,7 +9,7 @@ const db = require('./models');
 
 const users = [
     { username: 'username', password: 'password' },
-    { username: 'kelvin', password: 'password' },
+    { username: 'gaurang', password: 'password' },
 ];
 
 const polls = [

@@ -1,6 +1,7 @@
 import React,{Component,Fragment} from 'react';
 import {connect} from "react-redux";
 import {authUser,logout} from "../store/actions";
+import '../index.css'
 
 class Auth extends Component{
     constructor(props){
@@ -25,20 +26,18 @@ class Auth extends Component{
         this.props.authUser(authType,{username,password});
     }
 
-
-
-
     render() {
         const {username,password} = this.state;
 
         return <div>
-        <form onSubmit={this.handleSubmit}>
-            <label > username </label>
+        <form className="form" onSubmit={this.handleSubmit}>
+            <label className="form-label"> Username </label>
             <input type="text" value={username} name="username" onChange={this.handleChange}/>
-
-            <label> password </label>
+            <br/>
+            <label className="form-label"> Password </label>
             <input type="text" value={password} name="password" onChange={this.handleChange}/>
-            <button type="submit">Submit</button>
+            <br/>
+            <button className="btn btn-light" type="submit" >Submit</button>
         </form>
         </div>
     }

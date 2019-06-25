@@ -4,7 +4,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import CreatePoll from "../components/CreatePoll";
 
 const CreatePollPage = ({isAuthenticated}) =>{
-    if(isAuthenticated) return <Redirect to ='/login'/>
+    if(!isAuthenticated) return <Redirect to ='/login'/>;
 
     return(
         <div>

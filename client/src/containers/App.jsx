@@ -7,7 +7,7 @@ import decode from 'jwt-decode';
 import {store} from '../store';
 import {setCurrentUser,addError,setToken} from "../store/actions";
 import RouteViews from './RouteViews';
-import Navbar from "./NavBar";
+import Navbar1 from "./NavBar";
 
 if(localStorage.jwtToken){
     setToken(localStorage.jwtToken);
@@ -23,11 +23,12 @@ const App = () => (
     <Provider store={store}>
         <Router>
             <Fragment>
-                <Navbar/>
+                <Navbar1/>
                 <RouteViews/>
             </Fragment>
         </Router>
     </Provider>
+
 );
 
 //

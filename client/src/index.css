@@ -1,0 +1,69 @@
+body {
+    background: #212121;
+}
+div{
+
+}
+
+/*.btn-group{*/
+/*    margin: auto;*/
+/*    width: 50%;*/
+/*}*/
+.alert{
+    display: block;
+}
+
+.buttons_center{
+    padding-top: 50px;
+    margin: auto;
+    width: 50%;
+}
+.navver{
+    /*color:#ffea00;*/
+}
+.navbar-colored{
+    color:#ffea00;
+}
+.buttons{
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.polls{
+
+    padding-top: 20px;
+    padding-left: 500px;
+    padding-right: 500px;
+    text-align: center;
+}
+.text{
+    color: #ff7961;
+    text-align: right;
+    padding-right: 20px;
+}
+.form{
+    padding : 100px 150px 100px 100px;
+    text-align: center;
+}
+.form-label{
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text-transform: capitalize;
+    padding-right: 20px;
+}
+.form-input{
+    margin: auto;
+    width: 50%;
+}
+
+.container{
+    color: #FFFFFF;
+    margin: auto;
+    width: 50%;
+}
+.heading{
+
+    color: #FFFFFF;
+    text-align: center;
+}
