@@ -2,8 +2,6 @@ module.exports = {
   ...require('./auth'),
     ...require('./poll')
 };
-
-
 module.exports.notFound = (req,res,next)=>{
 
     const err = new Error('Not Found');
@@ -13,7 +11,7 @@ module.exports.notFound = (req,res,next)=>{
 
 module.exports.errors = (err,req,res,next)=>{
 
-    res.status(err.status||400).json({
+        res.status(err.status||400).json({
         err : err.message||"Something Went wrong :("
     })
 
