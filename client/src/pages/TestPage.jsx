@@ -4,7 +4,6 @@ import decode from 'jwt-decode';
 import { Provider } from 'react-redux';
 import { store } from '../store';
 import { setToken, setCurrentUser, addError } from '../store/actions';
-import '../index.css'
 import Auth from '../components/Auth';
 import Poll from '../components/Poll';
 import ErrorMessage from '../components/ErrorMessage';
@@ -36,7 +35,7 @@ const UITest = (props) => (
             {/*<hr />*/}
 
 
-            <h2 class="heading"> Create Poll </h2>
+            <h3> Create Poll </h3>
             <CreatePoll />
             <hr />
 

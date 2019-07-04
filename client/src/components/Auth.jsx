@@ -1,7 +1,7 @@
 import React,{Component,Fragment} from 'react';
 import {connect} from "react-redux";
 import {authUser,logout} from "../store/actions";
-import '../index.css'
+import '../styles/auth.css'
 
 class Auth extends Component{
     constructor(props){
@@ -31,13 +31,15 @@ class Auth extends Component{
 
         return <div>
         <form className="form" onSubmit={this.handleSubmit}>
-            <label className="form-label"> Username </label>
-            <input type="text" value={username} name="username" onChange={this.handleChange}/>
-            <br/>
-            <label className="form-label"> Password </label>
-            <input type="text" value={password} name="password" onChange={this.handleChange}/>
-            <br/>
-            <button className="btn btn-light" type="submit" >Submit</button>
+            <br/><br/>
+            <table className="table">
+                <tr><input className="form-control mb-2 mr-sm-2" type="text" value={username} name="username" onChange={this.handleChange} placeholder="Username" minLength={5} />
+                </tr>
+                <tr><input className="form-control mb-2 mr-sm-2" type="password" value={password} name="password" onChange={this.handleChange} placeholder="Password" minLength={8}/>
+                </tr>
+                <tr> <button className="btn btn-primary buttons_center" type="submit" >Submit</button>
+                </tr>
+            </table>
         </form>
         </div>
     }

@@ -1,12 +1,13 @@
 import React,{Fragment} from 'react';
 import {connect} from "react-redux";
-import Alert from "react-bootstrap/Alert";
-
+import '../styles/errormessage.css'
 const ErrorMessage = ({error}) =>(
     <Fragment>
         {error.message!=null &&
-            <div class="alert alert-warning" role="alert">
+            <div><br/>
+            <div class="warning alert alert-warning " role="alert">
                     {error.message}
+            </div>
             </div>}
     </Fragment>
 );

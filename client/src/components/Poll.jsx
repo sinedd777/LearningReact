@@ -5,13 +5,15 @@ import { Pie } from 'react-chartjs-2';
 import { vote } from '../store/actions';
 import { color } from '../services/color';
 
+import '../styles/polls.css'
+
 const Poll = ({ poll, vote }) => {
     const answers =
         poll.options &&
         poll.options.map(option => (
             <button
                 onClick={() => vote(poll._id, { answer: option.option })}
-                className="button"
+                className="btn btn-danger"
                 key={option._id}>
                 {option.option}
             </button>
@@ -30,11 +32,18 @@ const Poll = ({ poll, vote }) => {
     };
 
     return (
-        <div>
-            <h3 classaName="poll-title">{poll.question}</h3>
-            <div className="buttons_center">{answers}</div>
+        <div className="centerdiv">
+            <table >
+                <tr>
+                    <th>
+                    <h3 className="poll-title">{poll.question}</h3></th>
+                </tr>
+            </table>
+            <br/>
+            <div className="centerbutton">{answers}</div>
+            <br/>
             {poll.options&&<Pie data={data} />}
-        </div>
+            </div>
     );
 };
 

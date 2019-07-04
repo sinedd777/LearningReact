@@ -4,7 +4,13 @@ import ErrorMessage from "../components/ErrorMessage";
 import Auth from "../components/Auth";
 
 const AuthPage = ({authType,isAuthenticated}) =>{
-    if(isAuthenticated) return <Redirect to ="/" />;
+    if(isAuthenticated) return (
+        <div>
+
+            <Redirect to ="/" />
+            <p>REGISTERED</p>
+        </div>
+        );
 
     return(
         <div>

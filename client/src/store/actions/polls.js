@@ -12,6 +12,19 @@ export const setCurrentPoll = poll => ({
     poll,
 });
 
+export const deletePoll = (path) =>{
+   return async dispatch=>{
+       try {
+           await API.call('delete', `poll/${path}`);
+           dispatch(removeError());
+       }catch (e) {
+           const { error } = e.response.data;
+           dispatch(addError(error));
+       }
+   }
+
+};
+
 export const getPolls = () => {
     return async dispatch => {
         try {
