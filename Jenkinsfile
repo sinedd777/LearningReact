@@ -10,4 +10,10 @@ pipeline {
             }
         }
     }
+    post {
+            success {
+                echo 'Build is complete'
+                build job: 'PROD', wait: false
+            }
+        }
 }
