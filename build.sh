@@ -1,3 +1,3 @@
 npm install && cd server &
 npm install && npm install nodemon && cd ../client &
-npm install && npm build
+npm install && npm run build
