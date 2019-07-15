@@ -1,5 +1,5 @@
 import axios from 'axios';
-const host = 'http://localhost:5000/api';
+const host = process.env.HOST;
 
 
 export const setToken = (token) =>{
