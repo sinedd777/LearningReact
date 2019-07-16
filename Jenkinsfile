@@ -10,11 +10,19 @@ pipeline {
                 sh 'sh build.sh'
             }
         }
+        stage('Deploy') {
+                    agent {
+                        label 'Slave2'
+                    }
+                    steps {
+                        sh 'ls'
+                        sh 'sh start.sh'
+                    }
+                }
     }
     post {
             success {
                 echo 'Build is complete'
-                build job: 'PROD', wait: false
             }
         }
 }
