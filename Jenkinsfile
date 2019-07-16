@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-            label 'Slave1'
-        }
+    agent none
     stages {
         stage('Build') {
+            agent {
+                label 'Slave1'
+            }
             steps {
                 sh 'ls'
                 sh 'sh build.sh'
