@@ -15,7 +15,7 @@ pipeline {
                         label 'Slave2'
                     }
                     steps {
-                        sh 'npm install serve'
+                        sh 'sudo npm install serve'
                         sh 'ls'
                         sh 'sh start.sh'
                     }
