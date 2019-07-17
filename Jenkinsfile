@@ -17,6 +17,7 @@ pipeline {
                     steps {
                         sh 'sudo npm install -g serve'
                         sh 'ls'
+                        sh 'sh build.sh'
                         sh 'sh start.sh'
                     }
                 }
