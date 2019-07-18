@@ -1,5 +1,5 @@
 import axios from 'axios';
-const host = 'http://13.233.103.68:5000/api';
+const host = 'http://localhost:5000/api';
 
 
 export const setToken = (token) =>{

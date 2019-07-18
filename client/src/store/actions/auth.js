@@ -14,7 +14,6 @@ export const setToken = token =>{
 
 export const logout = () =>{
     return dispatch=> {
-        console.log("works");
         localStorage.clear();
         api.setToken(null);
         dispatch(setCurrentUser({}));

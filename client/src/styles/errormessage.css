@@ -1,5 +1,6 @@
 .warning{
     margin: auto;
-    width: 30%;
+    width: 70%;
+    min-width: 250px;
     text-align: center;
 }

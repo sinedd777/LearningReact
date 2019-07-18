@@ -1,11 +1,11 @@
 .buttons {
     margin: auto;
-    width: 50%;
     text-align: center;
     padding-bottom: 50px;
 }
 .polls{
+    max-width: 400px;
     margin: auto;
-    width: 30%;
+    width: 70%;
     text-align: center;
 }

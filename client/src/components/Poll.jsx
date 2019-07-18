@@ -32,7 +32,7 @@ const Poll = ({ poll, vote }) => {
     };
 
     return (
-        <div className="centerdiv">
+        <div className="">
             <table >
                 <tr>
                     <th>

@@ -18,6 +18,7 @@ class CreatePoll extends Component {
         this.addAnswer = this.addAnswer.bind(this);
         this.handleAnswer = this.handleAnswer.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.removeAnswer = this.removeAnswer.bind(this);
     }
 
     handleChange(e) {
@@ -28,13 +29,12 @@ class CreatePoll extends Component {
         this.setState({ options: [...this.state.options, ''] });
     }
 
-    // removeAnswer(){
-    //     const array = [...this.state.options]; // make a separate copy of the array
-    //     const index = array.indexOf();
-    //     if (index !== -1) {
-    //         array.splice(index, 1);
-    //         this.setState({people: array});
-    //     }    }
+    removeAnswer(){
+        const array = [...this.state.options]; // make a separate copy of the array
+        console.log(this.state);
+        this.setState({options: array.pop()});
+
+    }
 
     handleAnswer(e, index) {
         const options = [...this.state.options];
@@ -66,7 +66,8 @@ class CreatePoll extends Component {
                     onChange={e => this.handleAnswer(e, i)}
                     placeholder="Option"
                 />
-            </Fragment>
+                {console.log(this.state)}
+                </Fragment>
         ));
         return (
             <div>
@@ -76,7 +77,7 @@ class CreatePoll extends Component {
                 </div>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <br/>
-                        <table className="table">
+                        <table className="table" border="1">
                             <tr>
                                 <input
                     className="form-control mb-2 mr-sm-2"
@@ -94,10 +95,10 @@ class CreatePoll extends Component {
                 </div>
                 </tr>
                     </table>
-                <div className="buttons_center">
+                    {<div className="buttons_center">
                     <Button block={true} color="primary" onClick={this.addAnswer}>Add Options</Button>{' '}
                     <Button block={true} color="info" type="submit">Submit</Button>{' '}
-                </div>
+                </div>}
                 </form>
             </div>
         );
